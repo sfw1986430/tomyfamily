@@ -18,5 +18,6 @@ from django.urls import path,include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # 最常规的写法，路由分配到每个app
     path('', include('pages.urls')),
 ]
