@@ -77,16 +77,30 @@ WSGI_APPLICATION = 'tomyfamily.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         # 'ENGINE': 'django.db.backends.sqlite3',
+#         # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'posts',
+#         'USER': 'root',
+#         'PASSWORD': '20040144007',
+#         'HOST': 'localhost',
+#         'PORT': '3306',
+#     }
+# }
+
+# 部署到heroku时的配置
 DATABASES = {
     'default': {
         # 'ENGINE': 'django.db.backends.sqlite3',
         # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'posts',
-        'USER': 'root',
-        'PASSWORD': '20040144007',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'HOST': 'my-host-goes-here',
+        'USER': 'my-user-goes-here',
+        'NAME': 'my-db-name-goes-here',
+        'PASSWORD': 'my-db-pass-goes-here',
+        'OPTIONS': {'ssl': {'ca':'/home/doubo/Desktop/django/heroku/ca-cert.pem', 'cert':'/home/doubo/Desktop/django/heroku/cert.pem', 'key':'/home/doubo/Desktop/django/heroku/key.pem'},},
     }
 }
 
