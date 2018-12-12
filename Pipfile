@@ -5,6 +5,7 @@ verify_ssl = true
 
 [dev-packages]
 pymysql = "*"
+django-mysql-pymysql = "*"
 
 [packages]
 django = "*"
