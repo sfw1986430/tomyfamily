@@ -79,16 +79,38 @@ WSGI_APPLICATION = 'tomyfamily.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
+DATABASES = {
+    'default': {
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'posts',
+        'USER': 'root',
+        'PASSWORD': '20040144007',
+        'HOST': 'localhost',
+        'PORT': '3306',
+    }
+}
+
+DATABASES['default'] = {
+    'ENGINE': 'django.db.backends.mysql',
+    'HOST': 'us-cdbr-iron-east-01.cleardb.net',
+    'USER': 'b86f35c8b4fa70',
+    'NAME': 'heroku_504939ba1d5611d3',
+    'PASSWORD': 'af683794',
+    'OPTIONS': {'ssl': {'ca':'/home/doubo/Desktop/django/heroku/ca-cert.pem', 'cert':'/home/doubo/Desktop/django/heroku/cert.pem', 'key':'/home/doubo/Desktop/django/heroku/key.pem'},},
+}
+
 # DATABASES = {
 #     'default': {
 #         # 'ENGINE': 'django.db.backends.sqlite3',
 #         # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'posts',
-#         'USER': 'root',
-#         'PASSWORD': '20040144007',
-#         'HOST': 'localhost',
-#         'PORT': '3306',
+#         'HOST': 'us-cdbr-iron-east-01.cleardb.net',
+#         'USER': 'b86f35c8b4fa70',
+#         'NAME': 'heroku_504939ba1d5611d3',
+#         'PASSWORD': 'af683794',
+#         'OPTIONS': {'ssl': {'ca':'/home/doubo/Desktop/django/heroku/ca-cert.pem', 'cert':'/home/doubo/Desktop/django/heroku/cert.pem', 'key':'/home/doubo/Desktop/django/heroku/key.pem'},},
 #     }
 # }
 
@@ -106,18 +128,7 @@ WSGI_APPLICATION = 'tomyfamily.wsgi.application'
 #     }
 # }
 
-# DATABASES = {
-#     'default': {
-#         # 'ENGINE': 'django.db.backends.sqlite3',
-#         # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#         'ENGINE': 'django.db.backends.mysql',
-#         'HOST': 'us-cdbr-iron-east-01.cleardb.net',
-#         'USER': 'b86f35c8b4fa70',
-#         'NAME': 'heroku_504939ba1d5611d3',
-#         'PASSWORD': 'af683794',
-#         'OPTIONS': {'ssl': {'ca':'/home/doubo/Desktop/django/heroku/ca-cert.pem', 'cert':'/home/doubo/Desktop/django/heroku/cert.pem', 'key':'/home/doubo/Desktop/django/heroku/key.pem'},},
-#     }
-# }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
