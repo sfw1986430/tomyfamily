@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os
 import sys
+import ssl
+ssl.match_hostname = lambda cert, hostname: True
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -91,19 +93,31 @@ WSGI_APPLICATION = 'tomyfamily.wsgi.application'
 # }
 
 # 部署到heroku时的配置
-DATABASES = {
-    'default': {
-        # 'ENGINE': 'django.db.backends.sqlite3',
-        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        'ENGINE': 'django.db.backends.mysql',
-        'HOST': 'my-host-goes-here',
-        'USER': 'my-user-goes-here',
-        'NAME': 'my-db-name-goes-here',
-        'PASSWORD': 'my-db-pass-goes-here',
-        'OPTIONS': {'ssl': {'ca':'/home/doubo/Desktop/django/heroku/ca-cert.pem', 'cert':'/home/doubo/Desktop/django/heroku/cert.pem', 'key':'/home/doubo/Desktop/django/heroku/key.pem'},},
-    }
-}
+# DATABASES = {
+#     'default': {
+#         # 'ENGINE': 'django.db.backends.sqlite3',
+#         # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#         'ENGINE': 'django.db.backends.mysql',
+#         'HOST': 'us-cdbr-iron-east-01.cleardb.net',
+#         'USER': 'b86f35c8b4fa70',
+#         'NAME': 'heroku_504939ba1d5611d3',
+#         'PASSWORD': 'af683794',
+#         'OPTIONS': {'ssl': {'ca':'C:\\Users\\doubo\\Desktop\\heroku\\ca-cert.pem', 'cert':'C:\\Users\\doubo\\Desktop\\heroku\\cert.pem', 'key':'C:\\Users\\doubo\\Desktop\\heroku\\key.pem'},},
+#     }
+# }
 
+# DATABASES = {
+#     'default': {
+#         # 'ENGINE': 'django.db.backends.sqlite3',
+#         # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#         'ENGINE': 'django.db.backends.mysql',
+#         'HOST': 'us-cdbr-iron-east-01.cleardb.net',
+#         'USER': 'b86f35c8b4fa70',
+#         'NAME': 'heroku_504939ba1d5611d3',
+#         'PASSWORD': 'af683794',
+#         'OPTIONS': {'ssl': {'ca':'/home/doubo/Desktop/django/heroku/ca-cert.pem', 'cert':'/home/doubo/Desktop/django/heroku/cert.pem', 'key':'/home/doubo/Desktop/django/heroku/key.pem'},},
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
