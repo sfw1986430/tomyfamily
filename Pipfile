@@ -4,11 +4,16 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
+pymysql = "*"
+django-mysql-pymysql = "*"
+
 
 
 [packages]
 django = "*"
 gunicorn = "==19.9.0"
+
+
 
 [requires]
 python_version = "3.7"
