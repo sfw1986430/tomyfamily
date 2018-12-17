@@ -15,7 +15,6 @@ import sys
 # import ssl
 # ssl.match_hostname = lambda cert, hostname: True
 # 添加远程数据库
-import dj_database_url
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -94,18 +93,14 @@ DATABASES = {
 }
 
 # 配置heroku的cleardb的设置
-# DATABASES['default'] = {
-#     'ENGINE': 'django.db.backends.mysql',
-#     'HOST': 'us-cdbr-iron-east-01.cleardb.net',
-#     'USER': 'b5ffa1f286162e',
-#     'NAME': 'heroku_2cc5ee896069e9c',
-#     'PASSWORD': '29a43fff',
-#     'OPTIONS': {'ssl': {'ca':'/home/doubo/Desktop/django/heroku/ca-cert.pem', 'cert':'/home/doubo/Desktop/django/heroku/cert.pem', 'key':'/home/doubo/Desktop/django/heroku/key.pem'},},
-# }
-
-DATABASES['default'] = dj_database_url.config('default=mysql://b5ffa1f286162e:29a43fff@us-cdbr-iron-east-01.cleardb.net/heroku_2cc5ee896069e9c')
-
-
+DATABASES['default'] = {
+    'ENGINE': 'django.db.backends.mysql',
+    'HOST': 'us-cdbr-iron-east-01.cleardb.net',
+    'USER': 'b5ffa1f286162e',
+    'NAME': 'heroku_2cc5ee896069e9c',
+    'PASSWORD': '29a43fff',
+    'OPTIONS': {'ssl': {'ca':'/home/doubo/Desktop/django/heroku/ca-cert.pem', 'cert':'/home/doubo/Desktop/django/heroku/cert.pem', 'key':'/home/doubo/Desktop/django/heroku/key.pem'},},
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
