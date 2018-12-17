@@ -12,8 +12,10 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os
 import sys
-import ssl
-ssl.match_hostname = lambda cert, hostname: True
+# import ssl
+# ssl.match_hostname = lambda cert, hostname: True
+# 添加远程数据库
+import dj_database_url
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -78,7 +80,6 @@ WSGI_APPLICATION = 'tomyfamily.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
-
 DATABASES = {
     'default': {
         # 'ENGINE': 'django.db.backends.sqlite3',
@@ -92,47 +93,22 @@ DATABASES = {
     }
 }
 
-DATABASES['default'] = {
-    'ENGINE': 'django.db.backends.mysql',
-    'HOST': 'us-cdbr-iron-east-01.cleardb.net',
-    'USER': 'b86f35c8b4fa70',
-    'NAME': 'heroku_504939ba1d5611d3',
-    'PASSWORD': 'af683794',
-    'OPTIONS': {'ssl': {'ca':'/home/doubo/Desktop/django/heroku/ca-cert.pem', 'cert':'/home/doubo/Desktop/django/heroku/cert.pem', 'key':'/home/doubo/Desktop/django/heroku/key.pem'},},
-}
-
-# DATABASES = {
-#     'default': {
-#         # 'ENGINE': 'django.db.backends.sqlite3',
-#         # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#         'ENGINE': 'django.db.backends.mysql',
-#         'HOST': 'us-cdbr-iron-east-01.cleardb.net',
-#         'USER': 'b86f35c8b4fa70',
-#         'NAME': 'heroku_504939ba1d5611d3',
-#         'PASSWORD': 'af683794',
-#         'OPTIONS': {'ssl': {'ca':'/home/doubo/Desktop/django/heroku/ca-cert.pem', 'cert':'/home/doubo/Desktop/django/heroku/cert.pem', 'key':'/home/doubo/Desktop/django/heroku/key.pem'},},
-#     }
+# 配置heroku的cleardb的设置
+# DATABASES['default'] = {
+#     'ENGINE': 'django.db.backends.mysql',
+#     'HOST': 'us-cdbr-iron-east-01.cleardb.net',
+#     'USER': 'b5ffa1f286162e',
+#     'NAME': 'heroku_2cc5ee896069e9c',
+#     'PASSWORD': '29a43fff',
+#     'OPTIONS': {'ssl': {'ca':'/home/doubo/Desktop/django/heroku/ca-cert.pem', 'cert':'/home/doubo/Desktop/django/heroku/cert.pem', 'key':'/home/doubo/Desktop/django/heroku/key.pem'},},
 # }
 
-# 部署到heroku时的配置
-# DATABASES = {
-#     'default': {
-#         # 'ENGINE': 'django.db.backends.sqlite3',
-#         # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#         'ENGINE': 'django.db.backends.mysql',
-#         'HOST': 'us-cdbr-iron-east-01.cleardb.net',
-#         'USER': 'b86f35c8b4fa70',
-#         'NAME': 'heroku_504939ba1d5611d3',
-#         'PASSWORD': 'af683794',
-#         'OPTIONS': {'ssl': {'ca':'C:\\Users\\doubo\\Desktop\\heroku\\ca-cert.pem', 'cert':'C:\\Users\\doubo\\Desktop\\heroku\\cert.pem', 'key':'C:\\Users\\doubo\\Desktop\\heroku\\key.pem'},},
-#     }
-# }
+DATABASES['default'] = dj_database_url.config('default=mysql://b5ffa1f286162e:29a43fff@us-cdbr-iron-east-01.cleardb.net/heroku_2cc5ee896069e9c')
 
 
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
-
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
