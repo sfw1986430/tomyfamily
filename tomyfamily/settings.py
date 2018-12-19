@@ -94,13 +94,10 @@ WSGI_APPLICATION = 'tomyfamily.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-    'default': {
-        # 'ENGINE': 'django.db.backends.sqlite3',
-        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        dj_database_url.config(default="mysql://b5ffa1f286162e:29a43fff@us-cdbr-iron-east-01.cleardb.net/heroku_2cc5ee896069e9c", conn_max_age=500)
-    }
-}
+# DATABASES = {
+#     'default': dj_database_url.config(default="mysql://b5ffa1f286162e:29a43fff@us-cdbr-iron-east-01.cleardb.net/heroku_2cc5ee896069e9c", conn_max_age=500)
+#
+# }
 
 
 # 配置heroku的cleardb的设置
