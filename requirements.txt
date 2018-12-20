@@ -2,4 +2,6 @@ django==2.1.4
 gunicorn==19.9.0
 pymysql==0.9.3
 django-mysql-pymysql==0.1
+dj_database_url==0.5
+
 

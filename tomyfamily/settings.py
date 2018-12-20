@@ -77,7 +77,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'tomyfamily.wsgi.application'
 
 
-# Database
+# Database本地环境配置
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 # DATABASES = {
 #     'default': {
