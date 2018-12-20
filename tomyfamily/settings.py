@@ -12,12 +12,10 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os
 import sys
-# # import ssl
-# # ssl.match_hostname = lambda cert, hostname: True
+# import ssl
+# ssl.match_hostname = lambda cert, hostname: True
 # 添加远程数据库
-# import dj_database_url
-
-
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -94,10 +92,10 @@ WSGI_APPLICATION = 'tomyfamily.wsgi.application'
 #     }
 # }
 
-# DATABASES = {
-#     'default': dj_database_url.config(default="mysql://b5ffa1f286162e:29a43fff@us-cdbr-iron-east-01.cleardb.net/heroku_2cc5ee896069e9c", conn_max_age=500)
-#
-# }
+DATABASES = {
+    'default': dj_database_url.config(default="mysql://b5ffa1f286162e:29a43fff@us-cdbr-iron-east-01.cleardb.net/heroku_2cc5ee896069e9c", conn_max_age=500)
+
+}
 
 
 # 配置heroku的cleardb的设置
