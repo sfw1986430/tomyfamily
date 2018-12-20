@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os
 import sys
-# import ssl
+import ssl
 # ssl.match_hostname = lambda cert, hostname: True
 # 添加远程数据库
 import dj_database_url
