@@ -38,6 +38,7 @@ ALLOWED_HOSTS = ['*']
 INSTALLED_APPS = [
     # 创建的app在这里可以直接用配置文件
     'blog.apps.BlogConfig',
+    'accounts.apps.AccountsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -57,6 +58,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'tomyfamily.urls'
+
 
 TEMPLATES = [
     {
@@ -152,3 +154,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'

@@ -1,4 +1,4 @@
-django==2.1.4
+django==2.1.5
 gunicorn==19.9.0
 pymysql==0.9.3
 django-mysql-pymysql==0.1

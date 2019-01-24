@@ -20,5 +20,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # 最常规的写法，路由分配到每个app
     path('', include('blog.urls')),
-
+    path('accounts/', include('django.contrib.auth.urls')),#使用django自带的登陆框架
+    path('accounts/', include('accounts.urls')),
 ]
